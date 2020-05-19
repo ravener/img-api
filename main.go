@@ -13,6 +13,7 @@ import (
 var port = flag.Int("p", 3030, "Change the port to listen to.")
 var addr = flag.String("h", "127.0.0.1", "")
 var secret = flag.String("s", "", "Set a password")
+var dev = flag.Bool("d", false, "Start in development mode (disable browser cache)")
 
 func main() {
 	flag.Parse()
@@ -46,8 +47,9 @@ func main() {
 		})
 	}
 
-	// Uncomment this only in development. To disable cache when testing with a browser.
-	// router.Use(middleware.NoCache)
+	if *dev {
+	  router.Use(middleware.NoCache)
+  }
 
 	// Initialize all routes.
 	router.Get("/ping", routes.Ping)
