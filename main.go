@@ -47,7 +47,7 @@ func main() {
 	}
 
 	// Uncomment this only in development. To disable cache when testing with a browser.
-	router.Use(middleware.NoCache)
+	// router.Use(middleware.NoCache)
 
 	// Initialize all routes.
 	router.Get("/ping", routes.Ping)
