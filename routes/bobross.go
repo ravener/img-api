@@ -30,7 +30,7 @@ func ImageBobross(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	img = imaging.Resize(img, 428, 350, imaging.Box)
+	img = imaging.Resize(img, 428, 360, imaging.Box)
 
 	ctx := gg.NewContext(600, 775)
 

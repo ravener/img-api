@@ -9,7 +9,7 @@ If you exposed it to the internet with `-h 0.0.0.0` then users outside the host 
 Always returns `{"message": "Pong!"}` a quick check to see if the server is alive.
 
 ## GET /stats
-Returns an object with `{ "version": "version", "uptime": 0, "stats": {...} }`
+Returns an object with `{ "version": "version", "uptime": 0, "stats": {...}, "goroutines": 0 }`
 
 `version` is the version of the API server.
 
@@ -17,33 +17,37 @@ Returns an object with `{ "version": "version", "uptime": 0, "stats": {...} }`
 
 `stats` is the full Go object that contains memory usage information. See `go doc runtime.MemStats` for the fields.
 
-Stats is quite big and if you only need uptime you can pass `?noStats=true` to not send the mem stats.
+`goroutines` is the number of active goroutines.
+
+Stats is quite big and if you only need the other fields you can pass `?noStats=true` to not send the mem stats.
 
 # Image Endpoints
 All image endpoints return the image binary directly on `200` success. Any errors are sent with a JSON containing a `message` field.
 
 Replace `{IMAGE_URL}` with an actual url that points to an image smaller than 8 MB.
 
-If there is a `:(sizeXsize)` mentioned then it signals a recommended size that can be asked from Discord to avoid unnecessary resizing. For text input it can signal the max character limit.
+Replace `{TEXT}` with text input respecting the following character limit.
 
-- `/religion?avatar={IMAGE_URL}`
-- `/beautiful?avatar={IMAGE_URL}`
-- `/fear?avatar={IMAGE_URL}`
-- `/sacred?avatar={IMAGE_URL}`
-- `/painting?avatar={IMAGE_URL}`
+Numbers in parenthesis `()` can indicate a limit. For text it's the max character limit and for images it signals the minimum size that can be requested from Discord directly to avoid unnecessary resizing. The API still has to resize them for most of the endpoints but the smaller the input the faster that process is so those are the minimum sizes you should use.
+
+- `/religion?avatar={IMAGE_URL(512)}`
+- `/beautiful?avatar={IMAGE_URL(256)}`
+- `/fear?avatar={IMAGE_URL(256)}`
+- `/sacred?avatar={IMAGE_URL(512)}`
+- `/painting?avatar={IMAGE_URL(512)}`
 - `/color?color={NAME_OR_HEX}` (`#` is automatically stripped off, and name is case insensitive)
-- `/delete?avatar={IMAGE_URL}`
-- `/garbage?avatar={IMAGE_URL}`
-- `/tom?avatar={IMAGE_URL}`
-- `/bed?avatar={IMAGE_URL}&target={IMAGE_URL}`
-- `/crush?avatar={IMAGE_URL}&target={IMAGE_URL}`
-- `/patrick?avatar={IMAGE_URL}`
-- `/respect?avatar={IMAGE_URL}`
-- `/dipshit?text={TEXT:(max: 33 chars)}`
-- `/picture?avatar={IMAGE_URL}` (Note: A little slower compared to the other endpoints)
-- `/tweet?text={TEXT:(max: 165 chars)}`
-- `/truth?avatar={IMAGE_URL}`
-- `/bobross?avatar={IMAGE_URL}`
-- `/mask?avatar={IMAGE_URL:(512x512)}` (More feedback required to improve this.)
-- `/father?avatar={IMAGE_URL}&text={TEXT:(max: 42 chars)}`
-- `/achievement?avatar={IMAGE_URL}&text={TEXT:(max: 21 chars)}`
+- `/delete?avatar={IMAGE_URL(256)}`
+- `/garbage?avatar={IMAGE_URL(512)}`
+- `/tom?avatar={IMAGE_URL(256)}`
+- `/bed?avatar={IMAGE_URL(128)}&target={IMAGE_URL(128)}`
+- `/crush?avatar={IMAGE_URL(512)}&target={IMAGE_URL(512)}`
+- `/patrick?avatar={IMAGE_URL(512)}`
+- `/respect?avatar={IMAGE_URL(128)}`
+- `/dipshit?text={TEXT(33)}`
+- `/picture?avatar={IMAGE_URL(1024)}`
+- `/tweet?text={TEXT(165)}`
+- `/truth?avatar={IMAGE_URL(256)}`
+- `/bobross?avatar={IMAGE_URL(512)}`
+- `/mask?avatar={IMAGE_URL(512)}` (More feedback required to improve this.)
+- `/father?avatar={IMAGE_URL(256)}&text={TEXT(42)}`
+- `/achievement?avatar={IMAGE_URL(64)}&text={TEXT(21)}`

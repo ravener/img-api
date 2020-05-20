@@ -50,7 +50,7 @@ func ImageAchievement(w http.ResponseWriter, r *http.Request) {
 
 	ctx := gg.NewContextForImage(achievementTemplate)
 
-	ctx.DrawCircle(10 + 20, 10 + 20, 20)
+	ctx.DrawCircle(10+20, 10+20, 20)
 	ctx.Clip()
 	ctx.DrawImage(img, 10, 10)
 

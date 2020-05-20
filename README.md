@@ -44,6 +44,8 @@ Contributions are welcome, whether it is new image template ideas or code contri
 
 Also join [our Discord Server](https://discord.gg/mh7vEck) for contacting me and getting updates.
 
+Tip: If you use a web-browser to test the images output in development, pass the `-d` flag to disable browser cache to make testing easier.
+
 ## License
 Released under the [MIT License](LICENSE)
 

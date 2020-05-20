@@ -1,13 +1,13 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/pollen5/img-api/routes"
-	"flag"
 	"log"
 	"net/http"
-	"fmt"
 )
 
 var port = flag.Int("p", 3030, "Change the port to listen to.")
@@ -48,8 +48,10 @@ func main() {
 	}
 
 	if *dev {
-	  router.Use(middleware.NoCache)
-  }
+		router.Use(middleware.NoCache)
+		router.Mount("/debug", middleware.Profiler())
+		log.Print("Starting in development mode. (Browser cache will be disabled and profiler will be mounted.)")
+	}
 
 	// Initialize all routes.
 	router.Get("/ping", routes.Ping)

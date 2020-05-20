@@ -10,7 +10,7 @@ import (
 var uptime int64
 
 // XXX: Keep this version updated.
-const VERSION = "1.0.0"
+const VERSION = "1.0.1"
 
 // Stats returns some information about the API Server process, like how much memory it uses.
 func Stats(w http.ResponseWriter, r *http.Request) {
@@ -23,9 +23,10 @@ func Stats(w http.ResponseWriter, r *http.Request) {
 	}
 
 	bytes, err := json.Marshal(map[string]interface{}{
-		"version": VERSION,
-		"stats":   stats,
-		"uptime":  time.Now().Unix() - uptime,
+		"version":    VERSION,
+		"stats":      stats,
+		"uptime":     time.Now().Unix() - uptime,
+		"goroutines": runtime.NumGoroutine(),
 	})
 
 	if err != nil {

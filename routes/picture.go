@@ -30,13 +30,14 @@ func ImagePicture(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	img = imaging.Resize(img, 800, 600, imaging.Box)
+	img = imaging.Resize(img, 800, 650, imaging.Box)
 
 	ctx := gg.NewContext(909, 1024)
 
 	ctx.Rotate(-0.055)
-	ctx.DrawImage(img, 27, 10)
-	ctx.Rotate(0.055) // Undo rotation
+	// backup: 27x10
+	ctx.DrawImage(img, 27, 0)
+	ctx.Rotate(0.055)                    // Undo rotation
 	ctx.DrawImage(pictureTemplate, 0, 0) // Draw template.
 
 	// Signal the response type.

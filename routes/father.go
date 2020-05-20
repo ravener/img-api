@@ -57,12 +57,12 @@ func ImageFather(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	ctx.DrawCircle(370 + 60, 240 + 60, 60)
+	ctx.DrawCircle(370+60, 240+60, 60)
 	ctx.Clip()
 	ctx.DrawImage(img2, 370, 240)
 	ctx.ResetClip()
 
-	ctx.DrawCircle(20 + 90, 500 + 90, 90)
+	ctx.DrawCircle(20+90, 500+90, 90)
 	ctx.Clip()
 	ctx.DrawImage(img, 20, 500)
 
