@@ -1,3 +1,6 @@
+## v1.0.2 (27/5/2020)
+- Added `/dominantColor` endpoint.
+
 ## v1.0.1 (20/5/2020)
 - Documented recommended avatar sizes for each endpoint.
 - Added `goroutines` field in `/stats`
