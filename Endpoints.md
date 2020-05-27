@@ -51,3 +51,4 @@ Numbers in parenthesis `()` can indicate a limit. For text it's the max characte
 - `/mask?avatar={IMAGE_URL(512)}` (More feedback required to improve this.)
 - `/father?avatar={IMAGE_URL(256)}&text={TEXT(42)}`
 - `/achievement?avatar={IMAGE_URL(64)}&text={TEXT(21)}`
+- `/dominantColor?avatar={IMAGE_URL}` Get an image dominant color. Response format: `{ "hex": "#FFFFFF", "rgb": { "r": 255, "g": 255, "b": 255 } }`

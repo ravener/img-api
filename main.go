@@ -80,6 +80,9 @@ func main() {
 	router.Get("/father", routes.ImageFather)
 	router.Get("/achievement", routes.ImageAchievement)
 
+	// Non-Image routes.
+	router.Get("/dominantColor", routes.DominantColor)
+
 	// Start the server.
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%d", *addr, *port), router))
 }
