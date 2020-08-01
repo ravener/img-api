@@ -1,12 +1,12 @@
 # Image API
 
-This is an API written in Golang for image manipulation commands, primarily targets usage from [Discord](https://discordapp.com) Bots.
+This is an API written in Golang for image manipulation commands, primarily targets usage from [Discord](https://discord.com) Bots.
 
-It is used in my bot [Miyako](https://github.com/pollen5/miyako) and anyone is free to use this.
+It is used in my bot [Miyako](https://github.com/ravener/miyako) and anyone is free to use this.
 
 There used to be an API with the name "Idiotic API" by York. It was great while it lasted but it died now I tried to reinvent some of the endpoints that API had, this time it's open source and self-hosted so it will always be available to you.
 
-## Setup
+## Setup (No Docker)
 Install Golang 1.13+ then clone this repository.
 ```sh
 $ git clone https://github.com/pollen5/img-api
@@ -17,6 +17,15 @@ $ go build main.go
 $ ./main
 ```
 The default port is `3030` but you can pass the flag `-p` to change the port.
+
+#Setup (Docker)
+To run with docker you can use
+```sh
+# Replace target port with the one you want to use on your host (this only exposes it locally)
+docker run -d -p <target>:3030 iceemc/img-api:latest
+# To expose the server on all interfaces
+docker run -d -p 0.0.0.0:<target>:3030 iceemc/img-api:latest
+```
 
 All API endpoints are listed in [Endpoints.md](Endpoints.md)
 
@@ -30,9 +39,9 @@ If you want to expose the server to the internet (e.g to share it with a friend.
 ## Wrappers
 I wrote some API wrappers in multiple languages to help users get started quickly.
 
-- [JavaScript](https://github.com/pollen5/img-api.js)
-- [Python](https://github.com/pollen5/img-api.py)
-- [Golang](https://github.com/pollen5/img-api-go)
+- [JavaScript](https://github.com/ravener/img-api.js)
+- [Python](https://github.com/ravener/img-api.py)
+- [Golang](https://github.com/ravener/img-api-go)
 
 **Unofficial Wrappers:**
 - If you made any new wrappers then feel free to add it to this list.

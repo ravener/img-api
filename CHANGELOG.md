@@ -1,3 +1,7 @@
+## v1.0.3 (01/08/20)
+- Added a Dockerfile
+- Changed constant `VERSION` in routes/stats.go
+
 ## v1.0.2 (27/5/2020)
 - Added `/dominantColor` endpoint.
 
