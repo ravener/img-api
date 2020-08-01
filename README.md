@@ -1,8 +1,8 @@
 # Image API
 
-This is an API written in Golang for image manipulation commands, primarily targets usage from [Discord](https://discordapp.com) Bots.
+This is an API written in Golang for image manipulation commands, primarily targets usage from [Discord](https://discord.com) Bots.
 
-It is used in my bot [Miyako](https://github.com/pollen5/miyako) and anyone is free to use this.
+It is used in my bot [Miyako](https://github.com/ravener/miyako) and anyone is free to use this.
 
 There used to be an API with the name "Idiotic API" by York. It was great while it lasted but it died now I tried to reinvent some of the endpoints that API had, this time it's open source and self-hosted so it will always be available to you.
 
@@ -39,9 +39,9 @@ If you want to expose the server to the internet (e.g to share it with a friend.
 ## Wrappers
 I wrote some API wrappers in multiple languages to help users get started quickly.
 
-- [JavaScript](https://github.com/pollen5/img-api.js)
-- [Python](https://github.com/pollen5/img-api.py)
-- [Golang](https://github.com/pollen5/img-api-go)
+- [JavaScript](https://github.com/ravener/img-api.js)
+- [Python](https://github.com/ravener/img-api.py)
+- [Golang](https://github.com/ravener/img-api-go)
 
 **Unofficial Wrappers:**
 - If you made any new wrappers then feel free to add it to this list.
