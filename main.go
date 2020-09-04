@@ -79,6 +79,7 @@ func main() {
 	router.Get("/mask", routes.ImageMask)
 	router.Get("/father", routes.ImageFather)
 	router.Get("/achievement", routes.ImageAchievement)
+	router.Get("/kaguya", routes.ImageKaguya)
 
 	// Non-Image routes.
 	router.Get("/dominantColor", routes.DominantColor)

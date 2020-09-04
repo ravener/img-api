@@ -1,4 +1,7 @@
-## v1.0.3 (01/08/20)
+## v1.1.0 (4/9/202)
+- Added `/kaguya` route
+
+## v1.0.3 (01/08/2020)
 - Added a Dockerfile
 - Changed constant `VERSION` in routes/stats.go
 
