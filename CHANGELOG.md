@@ -1,4 +1,8 @@
-## v1.1.0 (4/9/202)
+## v1.2.0 (15/2/2021)
+- Print a startup message so it doesn't look like the program is hanging to the end user.
+- Start shipping binaries with goreleaser
+
+## v1.1.0 (4/9/2020)
 - Added `/kaguya` route
 
 ## v1.0.3 (01/08/2020)

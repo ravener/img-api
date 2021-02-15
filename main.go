@@ -15,6 +15,11 @@ var addr = flag.String("h", "127.0.0.1", "")
 var secret = flag.String("s", "", "Set a password")
 var dev = flag.Bool("d", false, "Start in development mode (disable browser cache)")
 
+var (
+	version = "dev"
+	commit = "none"
+)
+
 func main() {
 	flag.Parse()
 
@@ -83,6 +88,9 @@ func main() {
 
 	// Non-Image routes.
 	router.Get("/dominantColor", routes.DominantColor)
+
+	fmt.Printf("Img API Version %s (Commit: %s)\n", version, commit)
+	fmt.Printf("Running on http://%s:%d\n", *addr, *port)
 
 	// Start the server.
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%d", *addr, *port), router))

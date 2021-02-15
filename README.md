@@ -6,19 +6,29 @@ It is used in my bot [Miyako](https://github.com/ravener/miyako) and anyone is f
 
 There used to be an API with the name "Idiotic API" by York. It was great while it lasted but it died now I tried to reinvent some of the endpoints that API had, this time it's open source and self-hosted so it will always be available to you.
 
+## Install
+Pre-built binaries are available for Windows, macOS and Linux in [GitHub Releases](https://github.com/ravener/img-api/releases), the easiest way to get started is to just download a release which includes everything needed to get started in your machine without installing anything else.
+
+Simply extract the archive and run the `img-api` binary (`img-api.exe` on Windows)
+
+On Linux/macOS you can type `./img-api` to run it, on Windows you may just double click the exe or type `img-api` in cmd. (Make sure you are in the correct directory)
+
+The API will start in `http://localhost:3030` but the port can be changed via `-p`
+
+If the prebuilt binaries doesn't suit you or you'd like to edit the code then continue for instructions on building, this will require [Golang 1.13+](https://golang.org) installed.
+
 ## Setup (No Docker)
-Install Golang 1.13+ then clone this repository.
+Install Golang 1.13+ (`git` must also be installed) then clone this repository.
 ```sh
-$ git clone https://github.com/pollen5/img-api
+$ git clone https://github.com/ravener/img-api
 $ cd img-api
 # Build the binary
 $ go build main.go
 # start the server
 $ ./main
 ```
-The default port is `3030` but you can pass the flag `-p` to change the port.
 
-#Setup (Docker)
+# Setup (Docker)
 To run with docker you can use
 ```sh
 # Replace target port with the one you want to use on your host (this only exposes it locally)
