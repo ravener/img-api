@@ -10,7 +10,7 @@ import (
 var uptime int64
 
 // XXX: Keep this version updated.
-const VERSION = "1.2.2"
+const VERSION = "1.2.3"
 
 // Stats returns some information about the API Server process, like how much memory it uses.
 func Stats(w http.ResponseWriter, r *http.Request) {
