@@ -7,34 +7,35 @@ before:
     # you may remove this if you don't need go generate
     # - go generate ./...
 builds:
-  - env:
-      - CGO_ENABLED=0
-  - goos:
-      - linux
-      - windows
-      - darwin
-  - binary: img-api
-  - goarch:
-      - arm64
-      - arm
-      - amd64
-      - 386
+- env:
+    - CGO_ENABLED=0
+  goos:
+    - linux
+    - windows
+    - darwin
+  binary: img-api
+  goarch:
+    - arm64
+    - arm
+    - amd64
+    - 386
 archives:
-  - replacements:
-    - darwin: Darwin
-    - linux: Linux
-    - windows: Windows
-    - 386: i386
-    - amd64: x86_64
-  - format_overrides:
-      - goos: windows
-      - format: zip
-  - files:
-      - LICENSE
-      - README.md
-      - Endpoints.md
-      - CHANGELOG.md
-      - assets/*
+- replacements:
+    darwin: Darwin
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
+
+  format_overrides:
+    - goos: windows
+      format: zip
+  files:
+    - LICENSE
+    - README.md
+    - Endpoints.md
+    - CHANGELOG.md
+    - assets/*
 checksum:
   name_template: 'checksums.txt'
 snapshot:
