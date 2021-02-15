@@ -1,3 +1,6 @@
+## v1.2.1 (15/2/2021)
+- Useless release to force a release.
+
 ## v1.2.0 (15/2/2021)
 - Print a startup message so it doesn't look like the program is hanging to the end user.
 - Start shipping binaries with goreleaser
