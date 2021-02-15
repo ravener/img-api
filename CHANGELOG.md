@@ -1,3 +1,6 @@
+## v1.2.2 (15/2/2021)
+- Useless release to force a release, I suck.
+
 ## v1.2.1 (15/2/2021)
 - Useless release to force a release.
 
