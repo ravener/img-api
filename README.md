@@ -13,6 +13,8 @@ Simply extract the archive and run the `img-api` binary (`img-api.exe` on Window
 
 On Linux/macOS you can type `./img-api` to run it, on Windows you may just double click the exe or type `img-api` in cmd. (Make sure you are in the correct directory)
 
+If you are on Linux/macOS you may also install via [Homebrew](https://brew.sh) just run: `brew install ravener/tap/img-api`
+
 The API will start in `http://localhost:3030` but the port can be changed via `-p`
 
 If the prebuilt binaries doesn't suit you or you'd like to edit the code then continue for instructions on building, this will require [Golang 1.13+](https://golang.org) installed.

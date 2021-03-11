@@ -1,3 +1,6 @@
+## v1.2.4 (11/3/2021)
+- Added homebrew installation. `brew install ravener/tap/img-api`
+
 ## v1.2.3 (15/2/2021)
 - Useless release to force a release, fucking kill me.
 

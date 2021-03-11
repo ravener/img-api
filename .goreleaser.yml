@@ -46,3 +46,18 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+brews:
+  -
+    name: img-api
+    tap:
+      owner: ravener
+      name: homebrew-tap
+    commit_author:
+      name: "Raven Ravener"
+      email: "ravener.anime@gmail.com"
+    folder: Formula
+    homepage: "https://github.com/ravener/img-api"
+    description: "An image server api for generating memes for Discord Bots."
+    license: "MIT"
+    install: |
+      bin.install_symlink "img-api"
