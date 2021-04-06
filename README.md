@@ -63,7 +63,7 @@ Official wrappers are promised to stay updated with all changes where as unoffic
 ## Contributing
 Contributions are welcome, whether it is new image template ideas or code contributions. Feel free to open any issues when in doubt.
 
-Also join [our Discord Server](https://discord.gg/mh7vEck) for contacting me and getting updates.
+Also join [`#img-api` in my Discord Server](https://discord.gg/wpE3Nfp) for contacting me and getting updates.
 
 Tip: If you use a web-browser to test the images output in development, pass the `-d` flag to disable browser cache to make testing easier.
 
