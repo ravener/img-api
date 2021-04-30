@@ -39,6 +39,11 @@ docker run -d -p <target>:3030 iceemc/img-api:latest
 docker run -d -p 0.0.0.0:<target>:3030 iceemc/img-api:latest
 ```
 
+# Setup (Pterodactyl)
+Just follow the below instructions in order, indicated by the **big numbers**
+![image](https://user-images.githubusercontent.com/30955604/116635544-0fe1a280-a92d-11eb-9837-8b03f1dd333f.png)
+
+
 All API endpoints are listed in [Endpoints.md](Endpoints.md)
 
 ## Local Usage or Shared?

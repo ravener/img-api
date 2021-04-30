@@ -1,0 +1,29 @@
+{
+	"_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+	"meta": {
+		"version": "PTDL_v1",
+		"update_url": null
+	},
+	"exported_at": "2021-04-29T20:45:33-04:00",
+	"name": "img-api",
+	"author": "jack@chaker.xyz",
+	"description": "Image API from https://github.com/ravener/img-api",
+	"features": null,
+	"images": ["quay.io/parkervcp/pterodactyl-images:base_debian"],
+	"file_denylist": [],
+	"startup": "./img-api",
+	"config": {
+		"files": "{}",
+		"startup": "{\r\n    \"done\": \"Running on\"\r\n}",
+		"logs": "{}",
+		"stop": "^C"
+	},
+	"scripts": {
+		"installation": {
+			"script": "#!/bin/bash\r\n# golang generic package\r\n\r\n\r\nif [ ! -d /mnt/server/ ]; then\r\n    mkdir -p /mnt/server/\r\nfi\r\n\r\ngo get github.com/ravener/img-api\r\n\r\ncd src/github.com/ravener/img-api\r\n\r\ngo get\r\n\r\ngo build\r\n\r\ncp -f -r . /mnt/server/",
+			"container": "golang:1.15-buster",
+			"entrypoint": "bash"
+		}
+	},
+	"variables": []
+}
