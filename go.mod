@@ -1,4 +1,4 @@
-module github.com/pollen5/img-api
+module github.com/ravener/img-api
 
 go 1.13
 

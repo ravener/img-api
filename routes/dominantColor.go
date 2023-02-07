@@ -1,9 +1,10 @@
 package routes
 
 import (
-	"github.com/pollen5/img-api/utils"
-	"github.com/cenkalti/dominantcolor"
 	"net/http"
+
+	"github.com/cenkalti/dominantcolor"
+	"github.com/ravener/img-api/utils"
 )
 
 func DominantColor(w http.ResponseWriter, r *http.Request) {
@@ -31,6 +32,6 @@ func DominantColor(w http.ResponseWriter, r *http.Request) {
 
 	utils.JSON(w, 200, map[string]interface{}{
 		"hex": hex,
-		"rgb": map[string]uint8{ "r": color.R, "g": color.G, "b": color.B },
+		"rgb": map[string]uint8{"r": color.R, "g": color.G, "b": color.B},
 	})
 }

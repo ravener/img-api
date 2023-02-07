@@ -3,11 +3,12 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/go-chi/chi"
-	"github.com/go-chi/chi/middleware"
-	"github.com/pollen5/img-api/routes"
 	"log"
 	"net/http"
+
+	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/middleware"
+	"github.com/ravener/img-api/routes"
 )
 
 var port = flag.Int("p", 3030, "Change the port to listen to.")
@@ -17,7 +18,7 @@ var dev = flag.Bool("d", false, "Start in development mode (disable browser cach
 
 var (
 	version = "dev"
-	commit = "none"
+	commit  = "none"
 )
 
 func main() {

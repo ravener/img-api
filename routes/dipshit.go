@@ -1,9 +1,10 @@
 package routes
 
 import (
-	"github.com/fogleman/gg"
 	"image"
 	"net/http"
+
+	"github.com/fogleman/gg"
 )
 
 var dipshitTemplate image.Image

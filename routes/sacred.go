@@ -1,11 +1,12 @@
 package routes
 
 import (
-	"github.com/disintegration/imaging"
-	"github.com/fogleman/gg"
-	"github.com/pollen5/img-api/utils"
 	"image"
 	"net/http"
+
+	"github.com/disintegration/imaging"
+	"github.com/fogleman/gg"
+	"github.com/ravener/img-api/utils"
 )
 
 var sacredTemplate image.Image

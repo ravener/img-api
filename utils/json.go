@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"net/http"
 	"encoding/json"
+	"net/http"
 )
 
 func JSON(w http.ResponseWriter, status int, data map[string]interface{}) {
