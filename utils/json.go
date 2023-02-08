@@ -13,5 +13,6 @@ func JSON(w http.ResponseWriter, status int, data map[string]interface{}) {
 	}
 
 	w.WriteHeader(status)
+	w.Header().Set("Content-Type", "application/json")
 	w.Write(bytes)
 }
