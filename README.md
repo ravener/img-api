@@ -25,9 +25,9 @@ Install Golang 1.13+ (`git` must also be installed) then clone this repository.
 $ git clone https://github.com/ravener/img-api
 $ cd img-api
 # Build the binary
-$ go build main.go
+$ go build
 # start the server
-$ ./main
+$ ./img-api
 ```
 
 # Setup (Docker)
