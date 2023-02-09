@@ -24,7 +24,7 @@ func ImageBed(w http.ResponseWriter, r *http.Request) {
 	img, err := utils.GetImage(file)
 
 	if err != nil {
-		utils.JSON(w, 400, map[string]interface{}{
+		utils.JSON(w, http.StatusBadRequest, map[string]interface{}{
 			"message": err.Error(),
 		})
 
@@ -43,7 +43,7 @@ func ImageBed(w http.ResponseWriter, r *http.Request) {
 	img2, err := utils.GetImage(file)
 
 	if err != nil {
-		utils.JSON(w, 400, map[string]interface{}{
+		utils.JSON(w, http.StatusBadRequest, map[string]interface{}{
 			"message": err.Error(),
 		})
 

@@ -185,7 +185,7 @@ func ImageColor(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if len(hx) < 3 {
-			utils.JSON(w, 400, map[string]interface{}{
+			utils.JSON(w, http.StatusBadRequest, map[string]interface{}{
 				"message": "Hex must be six digits.",
 			})
 

@@ -24,7 +24,7 @@ func ImagePatrick(w http.ResponseWriter, r *http.Request) {
 	img, err := utils.GetImage(file)
 
 	if err != nil {
-		utils.JSON(w, 400, map[string]interface{}{
+		utils.JSON(w, http.StatusBadRequest, map[string]interface{}{
 			"message": err.Error(),
 		})
 
