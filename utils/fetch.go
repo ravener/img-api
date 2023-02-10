@@ -22,7 +22,7 @@ func GetImage(url string) (image.Image, error) {
 	// Not really a big deal but still.
 	if res.ContentLength > 1048*1048*8 {
 		res.Body.Close()
-		return nil, errors.New("File cannot be larger than 8 MB")
+		return nil, errors.New("file cannot be larger than 8 MB")
 	}
 
 	img, _, err := image.Decode(res.Body)
