@@ -1,3 +1,8 @@
+## v1.2.5 (8/2/2023)
+- Optimized images using `pngquant`, this reduces the package size, memory usage and overall bandwidth usage.
+- Update go-chi to v5.
+- Windows ARM binaries are now included.
+
 ## v1.2.4 (11/3/2021)
 - Added homebrew installation. `brew install ravener/tap/img-api`
 
