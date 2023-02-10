@@ -42,7 +42,7 @@ func main() {
 				auth := r.Header.Get("Authorization")
 
 				if auth != *secret {
-					w.WriteHeader(401)
+					w.WriteHeader(http.StatusUnauthorized)
 					w.Header().Set("Content-Type", "application/json")
 					w.Write([]byte("{\"message\": \"Unauthorized\"}"))
 					return
