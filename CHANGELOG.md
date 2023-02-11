@@ -1,3 +1,6 @@
+## v1.2.6 (unreleased)
+- Error responses now properly set the `Content-Type` header.
+
 ## v1.2.5 (8/2/2023)
 - Optimized images using `pngquant`, this reduces the package size, memory usage and overall bandwidth usage.
 - Update go-chi to v5.

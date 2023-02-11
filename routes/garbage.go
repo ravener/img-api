@@ -25,10 +25,7 @@ func ImageGarbage(w http.ResponseWriter, r *http.Request) {
 	img, err := utils.GetImage(file)
 
 	if err != nil {
-		utils.JSON(w, http.StatusBadRequest, map[string]interface{}{
-			"message": err.Error(),
-		})
-
+		utils.Error(w, http.StatusBadRequest, err)
 		return
 	}
 

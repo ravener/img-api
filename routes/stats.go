@@ -1,10 +1,11 @@
 package routes
 
 import (
-	"encoding/json"
 	"net/http"
 	"runtime"
 	"time"
+
+	"github.com/ravener/img-api/utils"
 )
 
 var uptime int64
@@ -22,18 +23,12 @@ func Stats(w http.ResponseWriter, r *http.Request) {
 		runtime.ReadMemStats(stats)
 	}
 
-	bytes, err := json.Marshal(map[string]interface{}{
+	utils.JSON(w, http.StatusOK, map[string]interface{}{
 		"version":    VERSION,
 		"stats":      stats,
 		"uptime":     time.Now().Unix() - uptime,
 		"goroutines": runtime.NumGoroutine(),
 	})
-
-	if err != nil {
-		panic(err)
-	}
-
-	w.Write(bytes)
 }
 
 func init() {

@@ -16,3 +16,9 @@ func JSON(w http.ResponseWriter, status int, data map[string]interface{}) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(bytes)
 }
+
+func Error(w http.ResponseWriter, status int, err error) {
+	JSON(w, status, map[string]interface{}{
+		"message": err.Error(),
+	})
+}
