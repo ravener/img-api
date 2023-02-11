@@ -17,8 +17,12 @@ func JSON(w http.ResponseWriter, status int, data map[string]interface{}) {
 	w.Write(bytes)
 }
 
-func Error(w http.ResponseWriter, status int, err error) {
+func Message(w http.ResponseWriter, status int, message string) {
 	JSON(w, status, map[string]interface{}{
-		"message": err.Error(),
+		"message": message,
 	})
+}
+
+func Error(w http.ResponseWriter, status int, err error) {
+	Message(w, status, err.Error())
 }

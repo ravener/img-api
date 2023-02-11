@@ -15,9 +15,7 @@ func ImageAchievement(w http.ResponseWriter, r *http.Request) {
 	file := r.FormValue("avatar")
 
 	if file == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte("{\"message\": \"Missing 'avatar' query string.\"}"))
+		utils.Message(w, http.StatusBadRequest, "Missing 'avatar' query string.")
 		return
 	}
 
@@ -31,16 +29,12 @@ func ImageAchievement(w http.ResponseWriter, r *http.Request) {
 	text := r.FormValue("text")
 
 	if text == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte("{\"message\": \"Missing 'text' query string.\"}"))
+		utils.Message(w, http.StatusBadRequest, "Missing 'text' query string.")
 		return
 	}
 
 	if len(text) > 21 {
-		w.WriteHeader(http.StatusBadRequest)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte("{\"message\": \"Text must not be longer than 21 characters\"}"))
+		utils.Message(w, http.StatusBadRequest, "Text must not be longer than 21 characters.")
 		return
 	}
 

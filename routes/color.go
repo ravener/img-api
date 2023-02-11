@@ -166,9 +166,7 @@ func ImageColor(w http.ResponseWriter, r *http.Request) {
 	c := r.FormValue("color")
 
 	if c == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte("{\"message\": \"Missing 'color' query string.\"}"))
+		utils.Message(w, http.StatusBadRequest, "Missing 'color' query string.")
 		return
 	}
 
@@ -176,19 +174,14 @@ func ImageColor(w http.ResponseWriter, r *http.Request) {
 
 	if !ok {
 		hx, err := hex.DecodeString(strings.TrimPrefix(c, "#"))
-		if err != nil {
-			utils.JSON(w, 400, map[string]interface{}{
-				"message": "Color wasn't a valid color name or a hex.",
-			})
 
+		if err != nil {
+			utils.Message(w, http.StatusBadRequest, "Color wasn't a valid color name or a hex.")
 			return
 		}
 
 		if len(hx) < 3 {
-			utils.JSON(w, http.StatusBadRequest, map[string]interface{}{
-				"message": "Hex must be six digits.",
-			})
-
+			utils.Message(w, http.StatusBadRequest, "Hex must be six digits.")
 			return
 		}
 

@@ -11,9 +11,7 @@ func DominantColor(w http.ResponseWriter, r *http.Request) {
 	file := r.FormValue("avatar")
 
 	if file == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte("{\"message\": \"Missing 'avatar' query string.\"}"))
+		utils.Message(w, http.StatusBadRequest, "Missing 'avatar' query string.")
 		return
 	}
 
